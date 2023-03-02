@@ -6,7 +6,6 @@ import org.apache.commons.lang.StringUtils;
 import org.example.radiation.commom.R;
 import org.example.radiation.entity.User;
 import org.example.radiation.service.UserService;
-import org.example.radiation.utils.SMSUtils;
 import org.example.radiation.utils.ValidateCodeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,7 +44,7 @@ public class UserController {
             // 调用腾讯云提供的短信服务API完成发送短信
             // String[] phoneNumberSet = {phone};
             // String[] templateParamSet = {code, "5"};
-
+            // SMSUtils.sendMessage("迪斯科虾饺公众号","1713910", phoneNumberSet, templateParamSet);
 
             // 需要将生成的验证码保存到Sesssion
             session.setAttribute(phone, code);
