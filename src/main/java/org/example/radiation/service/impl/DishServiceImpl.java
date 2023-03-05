@@ -1,6 +1,7 @@
 package org.example.radiation.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.example.radiation.dto.DishDto;
@@ -104,8 +105,7 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
      */
     @Transactional
     public void deleteWithFlavor(List<Long> ids) {
-        // 删除菜品，访问dish表
-        // 批量删除菜品
+        // 批量删除菜品，访问dish表
         this.removeByIds(ids);
 
         // 删除菜品对应的口味，范文dish_flavor表
