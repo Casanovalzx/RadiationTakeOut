@@ -129,7 +129,7 @@ public class EmployeeController {
     public R<String> update(HttpServletRequest request, @RequestBody Employee employee){
         log.info(employee.toString());
 
-        if(employee.getId() == 1) {
+        if(employee.getId() == 1 && employee.getStatus() == 0) {
             return R.error("无法禁用管理员");
         }
         //Long empId = (Long)request.getSession().getAttribute("employee");
